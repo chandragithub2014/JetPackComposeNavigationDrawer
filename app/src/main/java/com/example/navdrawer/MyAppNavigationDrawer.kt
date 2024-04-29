@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Divider
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -40,6 +41,7 @@ import com.example.navdrawer.screens.AttachEmailComposable
 import com.example.navdrawer.screens.EmailComposable
 import com.example.navdrawer.screens.PersonalComposable
 import kotlinx.coroutines.launch
+import androidx.compose.ui.graphics.Color
 //https://github.com/saqib-github-commits/JetpackComposeDrawerNavigation/blob/main/app/src/main/java/com/jetpackcompose/navigation/MainNavigation.kt
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -139,9 +141,9 @@ fun NavigationContent( navigationItems: List<NavigationItem> = navigationItemLis
                 label = {
                     Text(text = childItem.childName)
                 },
-                selected = index == selectedItemIndex,
+                selected = false ,//index == selectedItemIndex,
                 onClick = {
-                    selectedItemIndex = index
+               //     selectedItemIndex = index
                     /*navigateToDestination(childItem.destination,navController)
                      scope.launch {
                          drawerState.close()
@@ -156,7 +158,8 @@ fun NavigationContent( navigationItems: List<NavigationItem> = navigationItemLis
                 }
             )
         }
-        Spacer(modifier = Modifier.padding(5.dp))
+        Divider(color = Color.Black, thickness = 1.dp)
+       // selectedItemIndex += 1
     }
 }
 
